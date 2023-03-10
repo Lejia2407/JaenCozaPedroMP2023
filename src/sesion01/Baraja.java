@@ -14,5 +14,11 @@ public class Baraja {
 	private String nombreBaraja;
 	private Carta[] cartas;
 	
+	
+	public void insercion(Carta[] cartas2) {
+		// TODO Auto-generated method stub
+		
+	}
+	
 
 }

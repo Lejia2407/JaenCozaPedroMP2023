@@ -105,7 +105,7 @@ public class TestBaraja {
 	@Test
 	public void testOrdenarBarajaInsercion() {
 
-		Carta[] cartas = baraja.getCartas();
+		Carta[] cartas = baraja.getClass();
 		barajar(cartas);
 		baraja.insercion(cartas);
 

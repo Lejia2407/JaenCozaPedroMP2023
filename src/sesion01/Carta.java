@@ -57,6 +57,11 @@ public class Carta implements Comparable{
 		
 		Carta hola = (Carta) o;
 		
+		int indice;
+		
+		indice = hola.getValor() - this.valor;
+		
+		return indice;
 	
 	}
 	
