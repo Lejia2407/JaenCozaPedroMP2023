@@ -67,5 +67,6 @@ public class Carta implements Comparable{
 	
 	//GTA1S0115
 	//GTA1S0279
+	//GTA1S0523
 	
 }
