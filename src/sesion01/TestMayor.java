@@ -1,12 +1,9 @@
 package sesion01;
 
 import static org.junit.Assert.*;
-
 import org.junit.Test;
 
-
 public class TestMayor {
-
 	@Test
 	public void testNormal() {
 		int[] arr = new int[3];
@@ -45,7 +42,7 @@ public class TestMayor {
 			fail("Debería haber lanzado una excepción");
 		} catch (RuntimeException e) {
 			assertEquals(e.getMessage(), "Array vacio");
-			//assertTrue(true);
+//assertTrue(true);
 		}
 	}
 }

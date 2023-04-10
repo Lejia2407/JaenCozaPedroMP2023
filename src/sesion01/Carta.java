@@ -1,36 +1,29 @@
 package sesion01;
 
-public class Carta implements Comparable{
-
+public class Carta implements Comparable<Object> {
 	private String palo;
 	private int numero;
 	private int valor;
-	
-	public Carta(String j, int i) {
-		
-		switch(j)
-		{
-			case "O":
-				valor = i + 0;
-				break;
-				
-			case "C":
-				valor = i + 12;
-				break;
-				
-			case "E":
-				valor = i + 24;
-				break;
-				
-			case "B":
-				valor = i + 36;
-				break;
-					
-			default:
-				valor = -1;
-		}	
-		
-	}	
+
+	public Carta(String palo, int numero) {
+		super();
+		this.palo = new String(palo);
+		this.numero = numero;
+		switch (palo) {
+		case "O":
+			valor = numero;
+			break;
+		case "C":
+			valor = numero + 12;
+			break;
+		case "E":
+			valor = numero + 24;
+			break;
+		case "B":
+			valor = numero + 36;
+			break;
+		}
+	}
 
 	public Carta(Carta carta) {
 		super();
@@ -38,33 +31,21 @@ public class Carta implements Comparable{
 		this.numero = carta.numero;
 		this.valor = carta.valor;
 	}
-	
 
-	public int getValor () {
-		return valor;
-	}
-	
-	public int getNumero() {
-		return numero;
-	}
-	
 	public String getPalo() {
 		return palo;
 	}
-	
-	public int compareTo(Object o) {
-		
-		Carta hola = (Carta) o;
-		
-		int indice;
-		
-		indice = hola.getValor() - this.valor;
-		
-		return indice;
-	
+
+	public int getNumero() {
+		return numero;
 	}
-	
-	public boolean equals (Object obj) {
+
+	public int getValor() {
+		return valor;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
 		if (this == obj)
 			return true;
 		if (obj == null)
@@ -77,19 +58,25 @@ public class Carta implements Comparable{
 		if (palo == null) {
 			if (other.palo != null)
 				return false;
-		} else if (!palo.equals(other.palo)) {
+		} else if (!palo.equals(other.palo))
 			return false;
-		}
-		if (valor != other.valor) {
+		if (valor != other.valor)
 			return false;
-		}
 		return true;
-		
-		
 	}
-	
-	//GTA1S0115
-	//GTA1S0279
-	//GTA1S0523
-	
+
+	@Override
+	public int compareTo(Object o) {
+		Carta otro = (Carta) o;
+		if (valor == otro.valor)
+			return 0;
+		if (valor > otro.valor)
+			return 1;
+		else
+			return -1;
+	}
 }
+
+// GTA1S0115
+// GTA1S0279
+// GTA1S0523
