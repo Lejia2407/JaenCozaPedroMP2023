@@ -6,12 +6,6 @@ public class Carta implements Comparable{
 	private int numero;
 	private int valor;
 	
-	/**
-	 * Instantiates a new carta.
-	 *
-	 * @param j the j
-	 * @param i the i
-	 */
 	public Carta(String j, int i) {
 		
 		switch(j)
@@ -36,11 +30,16 @@ public class Carta implements Comparable{
 				valor = -1;
 		}	
 		
-		this.palo = j;
-		this.numero = i;
-		
 	}	
+
+	public Carta(Carta carta) {
+		super();
+		this.palo = new String(carta.palo);
+		this.numero = carta.numero;
+		this.valor = carta.valor;
+	}
 	
+
 	public int getValor () {
 		return valor;
 	}
@@ -63,6 +62,30 @@ public class Carta implements Comparable{
 		
 		return indice;
 	
+	}
+	
+	public boolean equals (Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Carta other = (Carta) obj;
+		if (numero != other.numero)
+			return false;
+		if (palo == null) {
+			if (other.palo != null)
+				return false;
+		} else if (!palo.equals(other.palo)) {
+			return false;
+		}
+		if (valor != other.valor) {
+			return false;
+		}
+		return true;
+		
+		
 	}
 	
 	//GTA1S0115
