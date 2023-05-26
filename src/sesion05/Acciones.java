@@ -18,7 +18,7 @@ public class Acciones
 		acciones.add(accion);
 	}
 
-	public List<Accion> getAcciones() 
+	public List<Accion> getAcciones()
 	{
 		return acciones;
 	}

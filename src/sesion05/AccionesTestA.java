@@ -67,10 +67,12 @@ public class AccionesTestA {
 		
 		List<Accion> lista = acciones.getAcciones();
 		Collections.sort(lista, Collections.reverseOrder(new VolumenComparator()));
-		for (int i = 0; i < lista.size()-1; i++) {
+		
+		for (int i = 0; i < lista.size()-1; i++) 
+		{
 			Accion accion0 = (Accion) lista.get(i);
 			Accion accion1 = (Accion) lista.get(i+1);
-			assertTrue(accion0.getVolumen()>=accion1.getVolumen());
+			assertTrue(accion0.getVolumen() >= accion1.getVolumen());
 		}
 	}
 }
