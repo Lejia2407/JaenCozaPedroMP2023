@@ -29,6 +29,7 @@ public class ArrayList<E> extends AbstractList<E> {
 
 	@SuppressWarnings("unchecked")
 	private void ensureCapacity() {
+		
 		if (data.length == size) {
 			E[] newData = (E[]) (new Object[size * 2 + 1]);
 			System.arraycopy(data, 0, newData, 0, size);

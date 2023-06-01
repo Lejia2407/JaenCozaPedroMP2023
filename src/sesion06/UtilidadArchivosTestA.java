@@ -36,9 +36,9 @@ public class UtilidadArchivosTestA {
 
 	@Test
     public void testCopiar() throws IOException{
-		directorioEntrada = directorioEntrada + File.separator + "test"
-				+ File.separator + "org" + File.separator + "mp"
-				+ File.separator + "sesion06" + File.separator;
+		directorioEntrada = directorioEntrada 
+				+ File.separator + "src" + File.separator 
+				+ "sesion06" + File.separator;
 
 		String origen = directorioEntrada + "archivoPruebaO.txt";
 		String destino = directorioEntrada + "archivoPruebaD.txt";
@@ -63,7 +63,7 @@ public class UtilidadArchivosTestA {
     	// Comprueba que los test no han sido modificados
       	cargarArchivoControl("https://drive.google.com/uc?export=view&id=14Iag-uQpDr3y3yDffY5TpiCyahTAtrtZ");
 
-		directorioEntrada = directorioEntrada + File.separator
+		directorioEntrada = directorioEntrada + File.separator 
 				+ "test" + File.separator;
 
 		File dir = new File(directorioEntrada);
